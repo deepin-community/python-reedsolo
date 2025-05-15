@@ -1,5 +1,5 @@
-template-repository (1.0-1) unstable; urgency=medium
+python-reedsolo (1.7.0-1) unstable; urgency=medium
 
-  * Initial release
+  * Initial release. (Closes: #985095)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Faidon Liambotis <paravoid@debian.org>  Tue, 28 Feb 2023 00:37:24 +0200

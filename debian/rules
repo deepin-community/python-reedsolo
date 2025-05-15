@@ -1,4 +1,10 @@
 #!/usr/bin/make -f
 
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+export PYBUILD_NAME=reedsolo
+export PYBUILD_BUILD_ARGS=--cythonize
+export PYBUILD_TEST_ARGS=tests
+
 %:
-	dh $@
+	dh $@ --buildsystem=pybuild
