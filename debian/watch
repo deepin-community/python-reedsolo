@@ -1,0 +1,7 @@
+version=4
+
+# use GitHub instead of PyPi, as the PyPI source does not include tests/
+# the PyPI URL would have been:
+#   https://pypi.debian.net/reedsolo/reedsolo-@ANY_VERSION@@ARCHIVE_EXT@
+opts=filenamemangle=s/v?(@ANY_VERSION@@ARCHIVE_EXT@)/@PACKAGE@-\$1/ \
+https://github.com/tomerfiliba/reedsolomon/tags .*/v?@ANY_VERSION@@ARCHIVE_EXT@

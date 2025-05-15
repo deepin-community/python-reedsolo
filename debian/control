@@ -1,15 +1,42 @@
-Source: template-repository
-Section: unknown
+Source: python-reedsolo
+Section: python
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
-Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
+Uploaders:
+ Antoine Beaupré <anarcat@debian.org>,
+ Faidon Liambotis <paravoid@debian.org>,
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-sequence-python3,
+ python3-all,
+ python3-all-dev,
+ python3-setuptools,
+ cython3,
+Testsuite: autopkgtest-pkg-pybuild
+Standards-Version: 4.6.2
+Homepage: https://github.com/tomerfiliba/reedsolomon
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-reedsolo
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-reedsolo.git
 
-Package: template-repository
+Package: python3-reedsolo
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Depends:
+ ${shlibs:Depends},
+ ${python3:Depends},
+ ${misc:Depends},
+Description: Reed Solomon encoder/decoder library in Python
+ A pythonic universal errors-and-erasures Reed-Solomon Codec to protect your
+ data from errors and bitrot. It includes a pure Python implementation and a
+ speed-optimized Cython/C extension.
+ .
+ This is a burst-type implementation, so that it supports any Galois field
+ higher than 2^3, but not binary streams. Burst errors are non-random errors
+ that more often happen on data storage mediums such as hard drives, hence this
+ library is better suited for data storage protection, and less for streams
+ noise correction, although it also works for this purpose but with a bit of
+ overhead (since it works with bytes only, instead of bits).
+ .
+ Based on the wonderful tutorial at Wikiversity, written by "Bobmath" and
+ "LRQ3000". If you are just starting with Reed-Solomon error correction codes,
+ the Wikiversity article is a good beginner's introduction.
